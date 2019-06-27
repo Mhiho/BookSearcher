@@ -1,0 +1,22 @@
+.item {
+  width: 33%;
+}
+.title {
+  height: 10vh;
+}
+.title, img, .description {
+  display: flex;
+  justify-content: center;
+  margin: 3% 5% 3% 5%;
+}
+.description {
+  height: 10vh;
+}
+img {
+  height: 25vh;
+}
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
