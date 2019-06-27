@@ -2,9 +2,9 @@
   width: 33%;
 }
 .title {
-  height: 10vh;
+  height: 20vh;
 }
-.title, img, .description {
+.title, img, .description, .authors {
   display: flex;
   justify-content: center;
   margin: 3% 5% 3% 5%;
@@ -19,4 +19,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.authors {
+  height: 10vh;
 }
