@@ -3,7 +3,7 @@ import classes from './App.module.scss';
 import books from 'google-books-search';
 import SearchBar from './components/SearchBar/SearchBar';
 import ListOfBooks from './components/ListOfBooks/ListOfBooks';
-
+import {config} from './config';
 
 
 class App extends Component {
@@ -16,9 +16,9 @@ class App extends Component {
       lang: 'en'
     };
 
-  const API_KEY = 'AIzaSyAbv1wv1o5lzTgBCniCGLMaW1pVthKgzwY';
+
   let options = {
-      key: API_KEY,
+      key: config.API_KEY,
       field: this.state.field,
       offset: 0,
       limit: 10,
