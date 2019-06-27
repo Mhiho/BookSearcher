@@ -3,7 +3,6 @@ import classes from './App.module.scss';
 import books from 'google-books-search';
 import SearchBar from './components/SearchBar/SearchBar';
 import ListOfBooks from './components/ListOfBooks/ListOfBooks';
-import Switch from './components/Switch/Switch';
 
 
 
@@ -13,7 +12,7 @@ class App extends Component {
 
     this.state = {
       books: [],
-      field: 'title',
+      field: 'language',
       lang: 'en'
     };
 
@@ -38,16 +37,12 @@ class App extends Component {
     }
 });
   }
-  switch(option){
-    this.setState({field: option})
-  }
 
   render() {
     console.log(this.state.field)
     return (
       <div>
         <SearchBar bookSearch={this.bookSearch.bind(this)}/>
-        <Switch switch={this.switch.bind(this)} />
         <ListOfBooks books={this.state.books} />
       </div>
     );

@@ -7,6 +7,8 @@ const bookItem = ({book}) => (
     <div className={classes.frame}>
     <img src={book.thumbnail} alt="photo"/>
     </div>
+    <div>{book.authors.map(author=>( <h4>{author}</h4> ))}</div>
+    <div>publishedDate: {book.publishedDate}</div>
     <p className={classes.description}>{book.description? book.description.replace(/^(.{100}[^\s]*).*/, "$1") : "Brak opisu."}</p>
   </div>
 )
