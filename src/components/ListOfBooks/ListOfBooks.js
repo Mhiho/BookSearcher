@@ -7,14 +7,15 @@ import _ from 'lodash';
 const ListOfBooks = (props) => {
     const list = _.map(props.books,book=>(
       <BookItem
-        className={classes.item}
         key={book.id}
+        className={classes.item}
         title={book.title}
         img={book.thumbnail}
         authors={book.authors}
         description={book.description}
       />
     ))
+    console.log(_.map(props.books, book => book.id))
     return (
       <ErrorBoundary className={classes.row}>
        {list}

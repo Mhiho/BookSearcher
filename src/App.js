@@ -58,16 +58,14 @@ class App extends Component {
               }
             });
           })
-        }, 500)
+        }, 1000)
   }
   scroll(){
     this.setState({position: window.pageYOffset})
   }
-
   render() {
-    console.log(this.state.position);
     return (
-      <div onMouseOver={this.scroll.bind(this)}>
+      <div onClick={this.scroll.bind(this)}>
           <SearchBar valueUp={this.valueUp.bind(this)} bookSearch={this.bookSearch.bind(this)} />
 
           <Switch switchField={this.switchField.bind(this)} />

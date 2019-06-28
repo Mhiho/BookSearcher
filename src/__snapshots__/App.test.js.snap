@@ -3,31 +3,31 @@
 exports[`ListOfBooks 1`] = `null`;
 
 exports[`bookItem 1`] = `
-Array [
+<div>
   <h3
     className="title"
->
+  >
     Brak tytułu
-</h3>,
+  </h3>
   <div
     className="frame"
->
+  >
     <img
-        alt="pff"
-        src={undefined}
+      alt="pff"
+      src={undefined}
     />
-</div>,
+  </div>
   <div
     className="authors"
->
+  >
     Brak autora
-</div>,
+  </div>
   <p
     className="description"
->
+  >
     Brak opisu.
-</p>,
-]
+  </p>
+</div>
 `;
 
 exports[`searchBar 1`] = `
