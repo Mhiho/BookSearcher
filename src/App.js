@@ -60,18 +60,19 @@ class App extends Component {
     console.log(this.state.value);
     return (
       <div>
-        <SearchBar valueUp={this.valueUp.bind(this)} bookSearch={this.bookSearch.bind(this)}/>
-        <Switch switchField={this.switchField.bind(this)} />
-        <InfiniteScroll
-          initialLoad={false}
-          pageStart={0}
-          loadMore={this.fetchUp.bind(this)}
-          hasMore={true || false}
-          loader={<div className="loader" key={0}>Loading ...</div>}
-        >
-        <ListOfBooks books={this.state.books} />
+          <SearchBar valueUp={this.valueUp.bind(this)} bookSearch={this.bookSearch.bind(this)}/>
 
-        </InfiniteScroll>
+          <Switch switchField={this.switchField.bind(this)} />
+
+          <InfiniteScroll
+            initialLoad={false}
+            pageStart={0}
+            loadMore={this.fetchUp.bind(this)}
+            hasMore={true || false}
+            loader={<div className="loader" key={0}>Loading ...</div>}
+          >
+              <ListOfBooks books={this.state.books} />
+            </InfiniteScroll>
       </div>
     );
   }

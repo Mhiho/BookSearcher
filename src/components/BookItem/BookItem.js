@@ -1,15 +1,16 @@
 import React from 'react';
 import classes from './BookItem.module.scss';
+import ErrorBoundary from '../ErrorBoundary';
 
-const bookItem = ({book}) => (
-  <div className={classes.item}>
-    <h3 className={classes.title}>{book.title ? book.title : "Brak tytułu"}</h3>
+const bookItem = (props) => (
+  <ErrorBoundary  className={classes.item}>
+    <h3 className={classes.title}>{props.title ? props.title : "Brak tytułu"}</h3>
     <div className={classes.frame}>
-    <img src={book.thumbnail} alt="photo"/>
+    <img src={props.img} alt="photo"/>
     </div>
-    <div className={classes.authors}>{book.authors ? book.authors.map(author=>( <h4>{author}</h4> )) : "Brak autora"}</div>
-    <p className={classes.description}>{book.description? book.description.replace(/^(.{100}[^\s]*).*/, "$1") : "Brak opisu."}</p>
-  </div>
+    <div className={classes.authors}>{props.authors ? props.authors.map(author=>( <h4>{author}</h4> )) : "Brak autora"}</div>
+    <p className={classes.description}>{props.description? props.description.replace(/^(.{100}[^\s]*).*/, "$1") : "Brak opisu."}</p>
+  </ErrorBoundary>
 )
 
 export default bookItem;

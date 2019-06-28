@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListOfBooks 1`] = `null`;
+
+exports[`bookItem 1`] = `
+Array [
+  <h3
+    className="title"
+>
+    Brak tytułu
+</h3>,
+  <div
+    className="frame"
+>
+    <img
+        alt="photo"
+        src={undefined}
+    />
+</div>,
+  <div
+    className="authors"
+>
+    Brak autora
+</div>,
+  <p
+    className="description"
+>
+    Brak opisu.
+</p>,
+]
+`;
+
+exports[`searchBar 1`] = `
+<div
+  className="row"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="pisz tutaj"
+      type="search"
+      value=""
+    />
+    <input
+      className="inputSubmit"
+      type="submit"
+      value="search"
+    />
+  </form>
+</div>
+`;
+
+exports[`switch 1`] = `
+<select
+  onChange={[Function]}
+  value="title"
+>
+  <option
+    value="author"
+  >
+    author
+  </option>
+  <option
+    value="title"
+  >
+    title
+  </option>
+</select>
+`;
