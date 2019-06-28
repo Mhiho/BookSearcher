@@ -2,7 +2,10 @@
   width: 33%;
 }
 .title {
-  height: 20vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .title, img, .description, .authors {
   display: flex;
@@ -22,4 +25,7 @@ img {
 }
 .authors {
   height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,7 @@
 .row {
   width: 100%;
   align-items: center;
-  height: 100px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +23,10 @@
   color: cornflowerblue;
   border: 1px solid darkgrey;
   font-weight: 900;
+}
+.inputSubmit:hover {
+  background: darken(#eee, 7%);
+  color: #9b6a12;
 }
 form {
   display: flex;

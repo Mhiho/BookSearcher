@@ -26,7 +26,7 @@ class SearchBar extends Component {
       <div className={classes.row} >
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input
-            placeholder="pisz tutaj"
+            placeholder="type here"
             className={classes.input}
             onChange={this.handleChange.bind(this)}
             type="search"

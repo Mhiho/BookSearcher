@@ -18,16 +18,18 @@ class App extends Component {
          key: config.API_KEY,
          field: 'title',
          offset: 0,
-         limit: 3,
+         limit: 1,
          type: 'books',
          order: 'relevance',
          lang: 'en'
      },
-     value: ''
+     value: '',
+     position: 0,
     };
   }
   bookSearch(value) {
     let self = this;
+    this.setState({options:{limit: 1}},()=>{
     books.search(value, this.state.options, function(error, results, apiResponse) {
     if ( ! error ) {
       self.setState({books: results})
@@ -35,6 +37,7 @@ class App extends Component {
         console.log(error);
     }
 });
+})
   }
   switchField(value){
     this.setState({options: {field: value}})
@@ -43,24 +46,29 @@ class App extends Component {
     this.setState({value})
   }
   fetchUp(){
-    this.setState({options:{ limit: this.state.options.limit + 3}},()=>{
-      let self = this;
-      books.search(this.state.value, this.state.options, function(error, results, apiResponse) {
-      if ( ! error ) {
-        self.setState({books: results})
-      } else {
-          console.log(error);
-      }
-  });
-    })
+    setTimeout(
+        ()=>{
+          this.setState({options:{ limit: this.state.options.limit + 1}},()=>{
+            let self = this;
+            books.search(this.state.value, this.state.options, function(error, results, apiResponse) {
+              if ( ! error ) {
+                self.setState({books: results})
+              } else {
+                console.log(error);
+              }
+            });
+          })
+        }, 500)
+  }
+  scroll(){
+    this.setState({position: window.pageYOffset})
   }
 
   render() {
-    console.log(this.state.options.limit)
-    console.log(this.state.value);
+    console.log(this.state.position);
     return (
-      <div>
-          <SearchBar valueUp={this.valueUp.bind(this)} bookSearch={this.bookSearch.bind(this)}/>
+      <div onMouseOver={this.scroll.bind(this)}>
+          <SearchBar valueUp={this.valueUp.bind(this)} bookSearch={this.bookSearch.bind(this)} />
 
           <Switch switchField={this.switchField.bind(this)} />
 
@@ -69,7 +77,7 @@ class App extends Component {
             pageStart={0}
             loadMore={this.fetchUp.bind(this)}
             hasMore={true || false}
-            loader={<div className="loader" key={0}>Loading ...</div>}
+            loader={this.state.position > 15 ? (<div className={`${classes.loader}`} key={0}>Loading ...</div>) : null}
           >
               <ListOfBooks books={this.state.books} />
             </InfiniteScroll>

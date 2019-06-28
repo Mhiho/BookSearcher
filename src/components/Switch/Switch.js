@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import classes from './Switch.module.scss';
+
 
 class Switch extends Component {
 
@@ -14,10 +16,12 @@ class Switch extends Component {
   }
   render(){
     return (
-      <select onChange={this.changeHandler.bind(this)} value={this.state.value}>
-        <option value="author">author</option>
-        <option value="title">title</option>
-      </select>
+      <div className={classes.selectCont}>
+        <select onChange={this.changeHandler.bind(this)} value={this.state.value}>
+          <option value="author">author</option>
+          <option value="title">title</option>
+        </select>
+      </div>
     )
   }
 }

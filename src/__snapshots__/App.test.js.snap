@@ -13,7 +13,7 @@ Array [
     className="frame"
 >
     <img
-        alt="photo"
+        alt="pff"
         src={undefined}
     />
 </div>,
@@ -40,7 +40,7 @@ exports[`searchBar 1`] = `
     <input
       className="input"
       onChange={[Function]}
-      placeholder="pisz tutaj"
+      placeholder="type here"
       type="search"
       value=""
     />
@@ -54,19 +54,23 @@ exports[`searchBar 1`] = `
 `;
 
 exports[`switch 1`] = `
-<select
-  onChange={[Function]}
-  value="title"
+<div
+  className="selectCont"
 >
-  <option
-    value="author"
-  >
-    author
-  </option>
-  <option
+  <select
+    onChange={[Function]}
     value="title"
   >
-    title
-  </option>
-</select>
+    <option
+      value="author"
+    >
+      author
+    </option>
+    <option
+      value="title"
+    >
+      title
+    </option>
+  </select>
+</div>
 `;

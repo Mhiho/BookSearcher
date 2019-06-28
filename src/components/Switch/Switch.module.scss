@@ -1,0 +1,23 @@
+.selectCont {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+select {
+  background: #eee;
+  color: cornflowerblue;
+  border: 1px solid darkgrey;
+  width: 100px;
+  justify-content: center;
+  height: 26px;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: 600;
+}
+select:hover {
+  background: darken(#eee, 7%);
+  color: #9b6a12;
+}
